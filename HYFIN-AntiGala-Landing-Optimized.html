@@ -18,13 +18,13 @@ body{font-family:"DM Sans",sans-serif;background:var(--cream);color:var(--jet);o
 
 /* NAV */
 .nav{position:sticky;top:0;z-index:100;background:var(--jet);border-bottom:1px solid rgba(212,168,67,.15);width:100%}
-.nav-inner{width:100%;padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:60px}
-.nav-logo{font-family:"Bebas Neue",sans-serif;font-size:24px;color:var(--cream);letter-spacing:5px;text-decoration:none}
+.nav-inner{width:100%;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px;gap:16px}
+.nav-logo{font-family:"Bebas Neue",sans-serif;font-size:18px;color:var(--cream);letter-spacing:3px;text-decoration:none;white-space:nowrap;flex-shrink:0}
 .nav-logo span{color:var(--gold)}
-.nav-links{display:flex;align-items:center;gap:32px}
-.nav-links a{font-size:13px;color:rgba(245,240,230,.55);text-decoration:none;letter-spacing:.5px;transition:color .2s}
+.nav-links{display:flex;align-items:center;gap:16px;flex-wrap:nowrap}
+.nav-links a{font-size:12px;color:rgba(245,240,230,.55);text-decoration:none;letter-spacing:.3px;transition:color .2s;white-space:nowrap}
 .nav-links a:hover{color:var(--gold)}
-.nav-cta{display:inline-flex;align-items:center;padding:9px 24px;border-radius:30px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;text-decoration:none;transition:all .2s}
+.nav-cta{display:inline-flex;align-items:center;padding:7px 16px;border-radius:30px;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;transition:all .2s;white-space:nowrap}
 .nav-cta-outline{border:1px solid rgba(245,240,230,.2);color:var(--cream)}
 .nav-cta-outline:hover{border-color:var(--gold);color:var(--gold)}
 .nav-cta-gold{background:var(--gold);color:#fff}
@@ -274,11 +274,14 @@ img{max-width:100%;height:auto}
   .footer-bottom{padding:20px 24px 0;margin-left:-24px;margin-right:-24px}
 }
 
-/* MOBILE */
-@media(max-width:600px){
-  /* Hamburger visible, nav links hidden */
+/* NAV COLLAPSE — trigger hamburger earlier for Funraise container */
+@media(max-width:900px){
   .hamburger{display:flex}
   .nav-links{display:none}
+}
+
+/* MOBILE */
+@media(max-width:600px){
 
   /* Typography */
   .hero h1{font-size:clamp(42px,12vw,64px)}

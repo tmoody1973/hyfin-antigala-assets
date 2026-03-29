@@ -388,17 +388,18 @@ img{max-width:100%;height:auto}
   </div>
 </nav>
 
-<!-- MOBILE NAV OVERLAY — all links wrapped in label to close menu on tap -->
-<div class="mobile-nav-overlay">
+<!-- MOBILE NAV OVERLAY -->
+<div class="mobile-nav-overlay" id="mobileNav">
   <label for="nav-toggle" class="mobile-nav-close" aria-label="Close menu">&times;</label>
-  <label for="nav-toggle"><a href="https://hyfin.org" target="_blank">HYFIN.org</a></label>
-  <label for="nav-toggle"><a href="#about">About</a></label>
-  <label for="nav-toggle"><a href="#awards">Awards</a></label>
-  <label for="nav-toggle"><a href="https://bit.ly/4rRshsm" target="_blank">Tickets</a></label>
-  <label for="nav-toggle"><a href="#sponsors">Sponsors</a></label>
-  <label for="nav-toggle"><a href="#support" class="nav-cta nav-cta-outline">Donate to HYFIN</a></label>
-  <label for="nav-toggle"><a href="https://bit.ly/4rRshsm" target="_blank" class="nav-cta nav-cta-gold">Get Your Tickets</a></label>
+  <a href="https://hyfin.org" target="_blank">HYFIN.org</a>
+  <a href="#about">About</a>
+  <a href="#awards">Awards</a>
+  <a href="https://bit.ly/4rRshsm" target="_blank">Tickets</a>
+  <a href="#sponsors">Sponsors</a>
+  <a href="#support" class="nav-cta nav-cta-outline">Donate to HYFIN</a>
+  <a href="https://bit.ly/4rRshsm" target="_blank" class="nav-cta nav-cta-gold">Get Your Tickets</a>
 </div>
+<script>document.getElementById('mobileNav').addEventListener('click',function(e){if(e.target.tagName==='A'){document.getElementById('nav-toggle').checked=false}})</script>
 
 <!-- HERO -->
 <section class="hero">

@@ -48,9 +48,9 @@ body{font-family:"DM Sans",sans-serif;background:var(--cream);color:var(--jet);o
 .hero{background:var(--jet);position:relative;overflow:hidden;width:100%}
 .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 25% 70%,rgba(212,168,67,.1) 0%,transparent 55%),radial-gradient(ellipse at 80% 20%,rgba(194,41,46,.06) 0%,transparent 45%)}
 .hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(245,240,230,.02) 1px,transparent 1px);background-size:24px 24px}
-.hero-inner{width:100%;padding:60px 48px 48px;display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;position:relative;z-index:1}
-.hero-image{position:relative}
-.hero-image img{width:100%;height:auto;display:block;filter:drop-shadow(0 20px 60px rgba(212,168,67,.12))}
+.hero-inner{width:100%;padding:60px 48px 48px;display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center;position:relative;z-index:1}
+.hero-image{position:relative;display:flex;align-items:center;justify-content:center}
+.hero-image img{width:110%;max-width:650px;height:auto;display:block;filter:drop-shadow(0 20px 60px rgba(212,168,67,.15));mix-blend-mode:lighten}
 .hero-image-badge{position:absolute;bottom:-8px;right:24px;background:var(--red);color:var(--cream);font-family:"Bebas Neue",sans-serif;font-size:14px;letter-spacing:2px;padding:7px 20px;border-radius:24px;transform:rotate(-3deg)}
 .hero-copy{padding:20px 0}
 .hero-presents{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:24px;display:flex;align-items:center;gap:12px}
@@ -168,17 +168,18 @@ body{font-family:"DM Sans",sans-serif;background:var(--cream);color:var(--jet);o
 .sponsors .section-title{font-size:clamp(30px,4vw,48px);color:var(--jet);text-align:center}
 .sponsors-intro{text-align:center;font-size:14px;color:rgba(13,13,13,.4);max-width:500px;margin:0 auto 36px}
 
-/* Sponsor tiers */
-.sponsor-tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:40px}
-.sponsor-tier-card{background:var(--jet);border-radius:12px;padding:28px 24px;text-align:left;transition:all .3s;display:flex;flex-direction:column}
-.sponsor-tier-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.12)}
-.sponsor-tier-card .tier-header{text-align:center;margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid rgba(245,240,230,.08)}
-.sponsor-tier-card h4{font-family:"Bebas Neue",sans-serif;font-size:18px;color:var(--cream);letter-spacing:2px;margin-bottom:6px}
-.sponsor-tier-card .tier-price{font-family:"Bebas Neue",sans-serif;font-size:24px;color:var(--gold);letter-spacing:1px}
-.sponsor-tier-card .tier-avail{font-size:11px;color:rgba(245,240,230,.3);font-style:italic;margin-top:4px}
+/* Sponsor tiers — two rows: 3 top, 2 bottom centered */
+.sponsor-tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:40px}
+.sponsor-tiers-row2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:66%;margin:0 auto 40px}
+.sponsor-tier-card{background:var(--jet);border-radius:14px;padding:32px 28px;text-align:left;transition:all .3s;display:flex;flex-direction:column}
+.sponsor-tier-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.15)}
+.sponsor-tier-card .tier-header{text-align:center;margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid rgba(245,240,230,.1)}
+.sponsor-tier-card h4{font-family:"Bebas Neue",sans-serif;font-size:22px;color:var(--cream);letter-spacing:2px;margin-bottom:8px}
+.sponsor-tier-card .tier-price{font-family:"Bebas Neue",sans-serif;font-size:28px;color:var(--gold);letter-spacing:1px}
+.sponsor-tier-card .tier-avail{font-size:11px;color:rgba(245,240,230,.35);font-style:italic;margin-top:6px}
 .sponsor-tier-card ul{list-style:none;margin:0;padding:0;flex:1}
-.sponsor-tier-card li{font-size:12px;line-height:1.5;color:rgba(245,240,230,.5);padding:5px 0;border-bottom:1px solid rgba(245,240,230,.04);display:flex;align-items:flex-start;gap:8px}
-.sponsor-tier-card li::before{content:"\2726";font-size:8px;color:var(--gold);margin-top:3px;flex-shrink:0}
+.sponsor-tier-card li{font-size:14px;line-height:1.6;color:rgba(245,240,230,.75);padding:6px 0;border-bottom:1px solid rgba(245,240,230,.06);display:flex;align-items:flex-start;gap:10px}
+.sponsor-tier-card li::before{content:"\2726";font-size:9px;color:var(--gold);margin-top:5px;flex-shrink:0}
 .sponsor-tier-card.naming{border:2px solid var(--gold)}
 .sponsor-tier-card.naming .tier-price{color:var(--gold-light)}
 
@@ -286,7 +287,8 @@ img{max-width:100%;height:auto}
   .act-grid{grid-template-columns:1fr;gap:32px}
 
   /* Sponsor tiers */
-  .sponsor-tiers{grid-template-columns:1fr;gap:12px}
+  .sponsor-tiers{grid-template-columns:1fr;gap:16px}
+  .sponsor-tiers-row2{grid-template-columns:1fr;max-width:100%;gap:16px}
 
   /* Sponsor logos: stack on mobile */
   .sponsor-logos-grid{flex-direction:column;align-items:center}
@@ -586,6 +588,9 @@ img{max-width:100%;height:auto}
         <li>100 :15 second underwriting spots on the air</li>
       </ul>
     </div>
+  </div>
+  <!-- Row 2: Table + General, centered -->
+  <div class="sponsor-tiers-row2">
     <div class="sponsor-tier-card">
       <div class="tier-header">
         <h4>Table Sponsor</h4>

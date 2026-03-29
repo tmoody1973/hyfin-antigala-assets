@@ -27,7 +27,7 @@ body{font-family:"DM Sans",sans-serif;background:var(--cream);color:var(--jet);o
 .nav-cta{display:inline-flex;align-items:center;padding:9px 24px;border-radius:30px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;text-decoration:none;transition:all .2s}
 .nav-cta-outline{border:1px solid rgba(245,240,230,.2);color:var(--cream)}
 .nav-cta-outline:hover{border-color:var(--gold);color:var(--gold)}
-.nav-cta-gold{background:var(--gold);color:var(--jet)}
+.nav-cta-gold{background:var(--gold);color:#fff}
 .nav-cta-gold:hover{background:var(--gold-light)}
 
 /* HAMBURGER */
@@ -66,7 +66,7 @@ body{font-family:"DM Sans",sans-serif;background:var(--cream);color:var(--jet);o
 .hero-meta-item strong{color:var(--cream);font-weight:500;display:block;font-size:15px;margin-bottom:2px}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 36px;border-radius:32px;font-family:"DM Sans",sans-serif;font-size:14px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:all .25s;min-height:44px}
-.btn-gold{background:var(--gold);color:var(--jet)}
+.btn-gold{background:var(--gold);color:#fff}
 .btn-gold:hover{background:var(--gold-light);transform:translateY(-2px)}
 .btn-red{background:var(--red);color:var(--cream)}
 .btn-red:hover{background:var(--red-dark);transform:translateY(-2px)}
@@ -126,7 +126,7 @@ body{font-family:"DM Sans",sans-serif;background:var(--cream);color:var(--jet);o
 .t-btn{width:100%;text-align:center;padding:14px;border-radius:28px;font-size:13px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;transition:all .2s;display:block;min-height:44px;line-height:1.2}
 .t-btn-red{background:var(--red);color:var(--cream)}
 .t-btn-red:hover{background:var(--red-dark)}
-.t-btn-gold{background:var(--gold);color:var(--jet)}
+.t-btn-gold{background:var(--gold);color:#fff}
 .t-btn-gold:hover{background:var(--gold-light)}
 .t-btn-outline{border:1px solid rgba(245,240,230,.12);color:rgba(245,240,230,.5);background:transparent}
 .t-btn-outline:hover{border-color:var(--gold);color:var(--gold)}
@@ -202,17 +202,18 @@ body{font-family:"DM Sans",sans-serif;background:var(--cream);color:var(--jet);o
 /* FOOTER */
 .footer{background:var(--jet);padding:56px 48px;border-top:3px solid var(--gold);width:100%}
 .footer-inner{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px}
-.footer-brand .footer-logo{font-family:"Bebas Neue",sans-serif;font-size:32px;color:var(--cream);letter-spacing:5px;margin-bottom:4px}
-.footer-brand .footer-tagline{font-size:13px;color:rgba(245,240,230,.3)}
-.footer-brand .footer-org{font-size:11px;color:rgba(245,240,230,.18);margin-top:16px;line-height:1.6}
-.footer-links-col h4{font-family:"Bebas Neue",sans-serif;font-size:14px;color:var(--gold);letter-spacing:2px;margin-bottom:14px}
-.footer-links-col a{display:block;font-size:13px;color:rgba(245,240,230,.4);text-decoration:none;padding:4px 0;transition:color .2s}
+.footer-brand .footer-logo{margin-bottom:12px}
+.footer-brand .footer-logo img{max-width:180px;height:auto;display:block}
+.footer-brand .footer-tagline{font-size:14px;color:rgba(245,240,230,.55);font-weight:500}
+.footer-brand .footer-org{font-size:12px;color:rgba(245,240,230,.35);margin-top:16px;line-height:1.7}
+.footer-links-col h4{font-family:"Bebas Neue",sans-serif;font-size:15px;color:var(--gold);letter-spacing:2px;margin-bottom:14px}
+.footer-links-col a{display:block;font-size:14px;color:rgba(245,240,230,.6);text-decoration:none;padding:5px 0;transition:color .2s}
 .footer-links-col a:hover{color:var(--gold)}
-.footer-contact h4{font-family:"Bebas Neue",sans-serif;font-size:14px;color:var(--gold);letter-spacing:2px;margin-bottom:14px}
-.footer-contact p{font-size:13px;color:rgba(245,240,230,.3);line-height:1.7}
+.footer-contact h4{font-family:"Bebas Neue",sans-serif;font-size:15px;color:var(--gold);letter-spacing:2px;margin-bottom:14px}
+.footer-contact p{font-size:14px;color:rgba(245,240,230,.55);line-height:1.7}
 .footer-contact a{color:var(--gold);text-decoration:none}
-.footer-bottom{padding:28px 48px 0;border-top:1px solid rgba(245,240,230,.05);display:flex;justify-content:space-between;align-items:center;margin-top:36px;margin-left:-48px;margin-right:-48px}
-.footer-bottom p{font-size:10px;color:rgba(245,240,230,.12)}
+.footer-bottom{padding:28px 48px 0;border-top:1px solid rgba(245,240,230,.1);display:flex;justify-content:space-between;align-items:center;margin-top:36px;margin-left:-48px;margin-right:-48px}
+.footer-bottom p{font-size:11px;color:rgba(245,240,230,.3)}
 
 /* RESPONSIVE IMAGES */
 img{max-width:100%;height:auto}
@@ -627,7 +628,7 @@ img{max-width:100%;height:auto}
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <div class="footer-logo">HYFIN</div>
+      <div class="footer-logo"><img src="https://raw.githubusercontent.com/tmoody1973/hyfin-antigala-assets/main/hyfin_antigala_logo.png" alt="HYFIN Anti-Gala"></div>
       <div class="footer-tagline">Connecting the Culture</div>
       <div class="footer-org">Radio Milwaukee<br>501(c)(3) Nonprofit Organization<br>P20-1257939</div>
     </div>

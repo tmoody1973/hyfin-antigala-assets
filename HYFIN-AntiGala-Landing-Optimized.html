@@ -199,6 +199,40 @@ body{font-family:"DM Sans",sans-serif;background:var(--cream);color:var(--jet);o
 .sponsor-cta p{font-size:14px;color:rgba(13,13,13,.45);margin-bottom:12px}
 .sponsor-cta a{color:var(--gold-dark);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--gold-dark)}
 
+/* SUPPORT HYFIN */
+.support{background:var(--jet);color:var(--cream)}
+.support-intro{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:64px}
+.support-intro-text h2{font-family:"Covered By Your Grace",cursive;font-size:clamp(36px,5vw,56px);color:var(--gold);margin-bottom:20px}
+.support-intro-text p{font-size:16px;line-height:1.8;color:rgba(245,240,230,.6);margin-bottom:16px}
+.support-intro-text p strong{color:rgba(245,240,230,.85)}
+.support-pillars{list-style:none;margin-top:24px}
+.support-pillar{padding:14px 0;border-bottom:1px solid rgba(245,240,230,.08)}
+.support-pillar h4{font-family:"Bebas Neue",sans-serif;font-size:18px;letter-spacing:2px;color:var(--gold);display:flex;align-items:center;gap:10px}
+.support-pillar h4::before{content:"+";font-size:20px;color:var(--red);font-weight:700}
+.support-pillar p{font-size:13px;color:rgba(245,240,230,.45);margin-top:6px;padding-left:30px}
+.support-img{border-radius:16px;overflow:hidden}
+.support-img img{width:100%;height:100%;object-fit:cover;display:block;border-radius:16px}
+
+/* Membership cards */
+.support-heading{text-align:center;margin-bottom:40px}
+.support-heading h3{font-family:"Bebas Neue",sans-serif;font-size:clamp(28px,3.5vw,42px);color:var(--cream);letter-spacing:2px;margin-bottom:8px}
+.support-heading p{font-size:15px;color:rgba(245,240,230,.4)}
+.membership-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:800px;margin:0 auto}
+.membership-card{border-radius:16px;overflow:hidden;transition:all .3s}
+.membership-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.2)}
+.membership-card-header{background:var(--blue);padding:28px 24px;text-align:center}
+.membership-card.premium .membership-card-header{background:var(--gold-dark)}
+.membership-card-header h4{font-family:"Bebas Neue",sans-serif;font-size:24px;color:var(--cream);letter-spacing:2px;margin-bottom:4px}
+.membership-card-header .membership-price{font-size:14px;color:rgba(245,240,230,.7);letter-spacing:1px}
+.membership-card-body{background:var(--cream);padding:28px 24px}
+.membership-card-body ul{list-style:none;margin:0 0 24px;padding:0}
+.membership-card-body li{font-size:14px;color:var(--jet);padding:10px 0;border-bottom:1px solid rgba(13,13,13,.1);display:flex;align-items:center;gap:10px}
+.membership-card-body li::before{content:"\2713";font-size:14px;color:var(--green);font-weight:700;flex-shrink:0}
+.membership-btns{display:flex;flex-direction:column;gap:10px}
+.membership-btn{display:block;text-align:center;padding:14px;border:2px solid var(--jet);border-radius:8px;font-family:"Bebas Neue",sans-serif;font-size:16px;letter-spacing:2px;color:var(--jet);text-decoration:none;transition:all .2s}
+.membership-btn:hover{background:var(--jet);color:var(--cream)}
+.membership-card.premium .membership-btn:hover{background:var(--gold-dark);color:var(--cream);border-color:var(--gold-dark)}
+
 /* FOOTER */
 .footer{background:var(--jet);padding:56px 48px;border-top:3px solid var(--gold);width:100%}
 .footer-inner{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px}
@@ -229,6 +263,8 @@ img{max-width:100%;height:auto}
   .pillars-grid{grid-template-columns:1fr 1fr}
   .act-grid{grid-template-columns:1fr}
   .sponsor-logos-grid{justify-content:center}
+  .support-intro{grid-template-columns:1fr}
+  .membership-grid{grid-template-columns:1fr;max-width:500px}
   .footer-inner{grid-template-columns:1fr}
   .fw-section{padding:60px 24px}
   .nav-inner{padding:0 24px}
@@ -295,6 +331,10 @@ img{max-width:100%;height:auto}
   .sponsor-logos-grid{flex-direction:column;align-items:center}
   .sponsor-logo-item{max-width:100%;min-width:0;width:100%}
 
+  /* Support HYFIN */
+  .support-intro{grid-template-columns:1fr;gap:32px}
+  .membership-grid{grid-template-columns:1fr;gap:20px}
+
   /* CTA band */
   .cta-band h2{font-size:clamp(24px,6vw,36px)}
   .cta-band .btn{width:100%}
@@ -334,7 +374,7 @@ img{max-width:100%;height:auto}
       <a href="#awards">Awards</a>
       <a href="https://bit.ly/4rRshsm" target="_blank">Tickets</a>
       <a href="#sponsors">Sponsors</a>
-      <a href="#" class="nav-cta nav-cta-outline">Donate to HYFIN</a>
+      <a href="#support" class="nav-cta nav-cta-outline">Donate to HYFIN</a>
       <a href="https://bit.ly/4rRshsm" target="_blank" class="nav-cta nav-cta-gold">Get Your Tickets</a>
     </div>
   </div>
@@ -346,7 +386,7 @@ img{max-width:100%;height:auto}
   <a href="#awards" onclick="closeMobileNav()">Awards</a>
   <a href="https://bit.ly/4rRshsm" target="_blank" onclick="closeMobileNav()">Tickets</a>
   <a href="#sponsors" onclick="closeMobileNav()">Sponsors</a>
-  <a href="#" class="nav-cta nav-cta-outline" onclick="closeMobileNav()">Donate to HYFIN</a>
+  <a href="#support" class="nav-cta nav-cta-outline" onclick="closeMobileNav()">Donate to HYFIN</a>
   <a href="https://bit.ly/4rRshsm" target="_blank" class="nav-cta nav-cta-gold" onclick="closeMobileNav()">Get Your Tickets</a>
 </div>
 
@@ -621,6 +661,85 @@ img{max-width:100%;height:auto}
 
   <div class="sponsor-cta">
     <p>Interested in being a sponsor? Reach out to Jeremy at <a href="mailto:jeremy@radiomilwaukee.org">jeremy@radiomilwaukee.org</a> today!</p>
+  </div>
+</section>
+
+<!-- SUPPORT HYFIN -->
+<section class="fw-section support" id="support">
+  <div class="support-intro">
+    <div class="support-intro-text">
+      <h2>Who We Are</h2>
+      <p><strong>HYFIN is a community-funded platform</strong>, part of non-profit Radio Milwaukee. Because we&rsquo;re community-funded, we&rsquo;re not beholden to corporate interests or traditional funders. We are accountable to you, our community.</p>
+      <p>A shifting media landscape and recent federal budget cuts have created an even more urgent need for direct community investment. This is a challenge we know we can meet because <strong>we&rsquo;ve got each other&rsquo;s backs.</strong></p>
+      <ul class="support-pillars">
+        <li class="support-pillar">
+          <h4>Culture</h4>
+          <p>Celebrating and amplifying the sounds, art, and movements that define Black Milwaukee</p>
+        </li>
+        <li class="support-pillar">
+          <h4>Tech &amp; Entrepreneurship</h4>
+          <p>Creating opportunities for Black businesses and professionals to thrive and get recognition</p>
+        </li>
+        <li class="support-pillar">
+          <h4>Youth &amp; Education</h4>
+          <p>Empowering the next generation with resources, mentorship, and platforms to lead</p>
+        </li>
+        <li class="support-pillar">
+          <h4>Storytelling</h4>
+          <p>Amplifying authentic voices that shape our culture and community narrative</p>
+        </li>
+      </ul>
+    </div>
+    <div class="support-img">
+      <div style="background:var(--midnight);border-radius:16px;min-height:400px;display:flex;align-items:center;justify-content:center"><span style="font-family:'Bebas Neue',sans-serif;font-size:16px;color:rgba(245,240,230,.15);letter-spacing:3px">HYFIN COMMUNITY PHOTO</span></div>
+    </div>
+  </div>
+
+  <div class="support-heading">
+    <h3>Support the Movement</h3>
+    <p>Your investment keeps HYFIN independent, community-owned, and growing.</p>
+  </div>
+
+  <div class="membership-grid">
+    <!-- Become a Member -->
+    <div class="membership-card">
+      <div class="membership-card-header">
+        <h4>Become a Member</h4>
+        <div class="membership-price">$10/MONTH OR $120/YEAR</div>
+      </div>
+      <div class="membership-card-body">
+        <ul>
+          <li>Official HYFIN t-shirt design by Nehemiah R. Edwards</li>
+          <li>Member recognition</li>
+          <li>Support a public media movement</li>
+          <li>Sustain authentic Black media</li>
+        </ul>
+        <div class="membership-btns">
+          <a href="https://hyfin.org/support" target="_blank" class="membership-btn">$10/Month</a>
+          <a href="https://hyfin.org/support" target="_blank" class="membership-btn">$120/Year</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Join HYFIN100 -->
+    <div class="membership-card premium">
+      <div class="membership-card-header">
+        <h4>Join HYFIN100</h4>
+        <div class="membership-price">$84/MONTH OR $1000/YEAR</div>
+      </div>
+      <div class="membership-card-body">
+        <ul>
+          <li>Exclusive premium gear</li>
+          <li>VIP invitations to HYFIN events</li>
+          <li>Insider access to the platform</li>
+          <li>Recognition as a founding supporter</li>
+        </ul>
+        <div class="membership-btns">
+          <a href="https://hyfin.org/support" target="_blank" class="membership-btn">$84/Month</a>
+          <a href="https://hyfin.org/support" target="_blank" class="membership-btn">$1000/Year</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 

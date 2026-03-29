@@ -30,19 +30,22 @@ body{font-family:"DM Sans",sans-serif;background:var(--cream);color:var(--jet);o
 .nav-cta-gold{background:var(--gold);color:#fff}
 .nav-cta-gold:hover{background:var(--gold-light)}
 
-/* HAMBURGER */
+/* HAMBURGER — pure CSS, no JS needed */
+#nav-toggle{display:none}
 .hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;width:44px;height:44px;background:none;border:none;cursor:pointer;padding:8px;gap:5px;z-index:200}
 .hamburger span{display:block;width:24px;height:2px;background:var(--cream);border-radius:2px;transition:all .3s}
-.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
-.hamburger.active span:nth-child(2){opacity:0}
-.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+#nav-toggle:checked~.nav .hamburger span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+#nav-toggle:checked~.nav .hamburger span:nth-child(2){opacity:0}
+#nav-toggle:checked~.nav .hamburger span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 
 /* MOBILE NAV OVERLAY */
 .mobile-nav-overlay{display:none;position:fixed;inset:0;background:rgba(13,13,13,.97);z-index:150;flex-direction:column;align-items:center;justify-content:center;gap:24px;opacity:0;transition:opacity .3s}
-.mobile-nav-overlay.active{display:flex;opacity:1}
+#nav-toggle:checked~.mobile-nav-overlay{display:flex;opacity:1}
 .mobile-nav-overlay a{font-family:"Bebas Neue",sans-serif;font-size:32px;color:var(--cream);text-decoration:none;letter-spacing:3px;padding:12px 24px;min-height:44px;display:flex;align-items:center;transition:color .2s}
 .mobile-nav-overlay a:hover{color:var(--gold)}
 .mobile-nav-overlay .nav-cta{font-family:"DM Sans",sans-serif;font-size:14px;padding:14px 36px;border-radius:32px;min-height:44px}
+.mobile-nav-close{position:absolute;top:20px;right:24px;font-size:36px;color:var(--cream);cursor:pointer;width:44px;height:44px;display:flex;align-items:center;justify-content:center;transition:color .2s}
+.mobile-nav-close:hover{color:var(--gold)}
 
 /* HERO */
 .hero{background:var(--jet);position:relative;overflow:hidden;width:100%}
@@ -365,13 +368,14 @@ img{max-width:100%;height:auto}
 </head>
 <body>
 
-<!-- NAV -->
+<!-- NAV — pure CSS hamburger, no JS required -->
+<input type="checkbox" id="nav-toggle">
 <nav class="nav">
   <div class="nav-inner">
     <a href="#" class="nav-logo"><span>HYFIN</span> Anti-Gala 2026</a>
-    <button class="hamburger" aria-label="Toggle navigation menu" onclick="toggleMobileNav()">
+    <label for="nav-toggle" class="hamburger" aria-label="Toggle navigation menu">
       <span></span><span></span><span></span>
-    </button>
+    </label>
     <div class="nav-links">
       <a href="https://hyfin.org" target="_blank">HYFIN.org</a>
       <a href="#about">About</a>
@@ -384,15 +388,16 @@ img{max-width:100%;height:auto}
   </div>
 </nav>
 
-<!-- MOBILE NAV OVERLAY -->
-<div class="mobile-nav-overlay" id="mobileNav">
-  <a href="https://hyfin.org" target="_blank" onclick="closeMobileNav()">HYFIN.org</a>
-  <a href="#about" onclick="closeMobileNav()">About</a>
-  <a href="#awards" onclick="closeMobileNav()">Awards</a>
-  <a href="https://bit.ly/4rRshsm" target="_blank" onclick="closeMobileNav()">Tickets</a>
-  <a href="#sponsors" onclick="closeMobileNav()">Sponsors</a>
-  <a href="#support" class="nav-cta nav-cta-outline" onclick="closeMobileNav()">Donate to HYFIN</a>
-  <a href="https://bit.ly/4rRshsm" target="_blank" class="nav-cta nav-cta-gold" onclick="closeMobileNav()">Get Your Tickets</a>
+<!-- MOBILE NAV OVERLAY — all links wrapped in label to close menu on tap -->
+<div class="mobile-nav-overlay">
+  <label for="nav-toggle" class="mobile-nav-close" aria-label="Close menu">&times;</label>
+  <label for="nav-toggle"><a href="https://hyfin.org" target="_blank">HYFIN.org</a></label>
+  <label for="nav-toggle"><a href="#about">About</a></label>
+  <label for="nav-toggle"><a href="#awards">Awards</a></label>
+  <label for="nav-toggle"><a href="https://bit.ly/4rRshsm" target="_blank">Tickets</a></label>
+  <label for="nav-toggle"><a href="#sponsors">Sponsors</a></label>
+  <label for="nav-toggle"><a href="#support" class="nav-cta nav-cta-outline">Donate to HYFIN</a></label>
+  <label for="nav-toggle"><a href="https://bit.ly/4rRshsm" target="_blank" class="nav-cta nav-cta-gold">Get Your Tickets</a></label>
 </div>
 
 <!-- HERO -->
@@ -773,29 +778,6 @@ img{max-width:100%;height:auto}
   </div>
 </footer>
 
-<script>
-function toggleMobileNav(){
-  var nav=document.getElementById('mobileNav');
-  var btn=document.querySelector('.hamburger');
-  var isActive=nav.classList.contains('active');
-  if(isActive){
-    nav.classList.remove('active');
-    btn.classList.remove('active');
-    document.body.style.overflow='';
-  }else{
-    nav.classList.add('active');
-    btn.classList.add('active');
-    document.body.style.overflow='hidden';
-  }
-}
-function closeMobileNav(){
-  var nav=document.getElementById('mobileNav');
-  var btn=document.querySelector('.hamburger');
-  nav.classList.remove('active');
-  btn.classList.remove('active');
-  document.body.style.overflow='';
-}
-</script>
 
 </body>
 </html>
